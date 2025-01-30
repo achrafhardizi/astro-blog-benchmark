@@ -4,8 +4,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import PageViews from '../components/PageViews.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
+
+const pageUrl = new URL(Astro.url.pathname, Astro.url.origin).href;
+
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
@@ -44,10 +48,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.title h1 {
 				margin: 0 0 0.5em 0;
 			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
 			.last-updated-on {
 				font-style: italic;
 			}
@@ -63,15 +63,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+						<div class="flex gap-1 opacity-80 justify-center items-center">
+							<div class="date">
+								<FormattedDate class="flex justify-center items-center" date={pubDate} />
+								{
+									updatedDate && (
+										<div class="last-updated-on">
+											Last updated on <FormattedDate date={updatedDate} />
+										</div>
+									)
+								}
+							</div> /
+							<PageViews url={pageUrl} />
 						</div>
 						<h1>{title}</h1>
 						<hr />
