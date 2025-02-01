@@ -145,46 +145,6 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 2. Second item
 3. Third item
 
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
 ## Other Elements — abbr, sub, sup, kbd, mark
 
 ### Syntax

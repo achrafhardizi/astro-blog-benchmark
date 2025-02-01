@@ -1,5 +1,4 @@
 ---
-
 export interface Props {
   url: string;
 }
@@ -66,7 +65,6 @@ const counterUrl = `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=${e
       const easedProgress = easeOutCubic(progress);
       const currentNumber = Math.round(startNumber + (difference * easedProgress));
 
-      // Format number with commas for better readability
       element.textContent = currentNumber.toLocaleString();
 
       if (progress < 1) {
@@ -97,8 +95,8 @@ const counterUrl = `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=${e
       if (match && match[1]) {
         const count = match[1].trim();
         const totalViews = count.split("/")[1].trim();
-        viewsCount.textContent = "0"; // Start from zero
-        animateNumber(0, totalViews, 1000, viewsCount); // Animate to actual count over 1 second
+        viewsCount.textContent = "0"; 
+        animateNumber(0, totalViews, 1000, viewsCount); 
       } else {
         viewsCount.textContent = "N/A";
       }
